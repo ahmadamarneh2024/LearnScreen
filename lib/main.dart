@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'BottomSheet.dart';
 
 
 void main() {
@@ -121,14 +122,27 @@ class LearnScreen extends StatelessWidget {
                 )
               ],
             ),
+            ElevatedButton(
+              onPressed: () {
+                _showBottomSheet(context);
+              },
+              child: Text("Show Bottom Sheet"),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-
+void _showBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+  //  isScrollControlled: true,
+    builder: (BuildContext context) {
+      return ShowBottomPage();
+    },
+  );
+}
 
 
 
